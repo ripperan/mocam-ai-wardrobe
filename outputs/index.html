@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>摩卡相机 MoCam 手机 App Demo</title>
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="prototype">
+    <section class="prototype-copy" aria-label="原型说明">
+      <span class="eyebrow">Mobile Prototype</span>
+      <h1>MoCam 手机 App 可点击原型</h1>
+      <p>右侧是 390 × 844 的手机模拟器。你可以像点手机一样操作糖分注册、拍照收录、AI 推荐和糖分社区。</p>
+      <div class="legend">
+        <span><b></b>选择糖分会影响权限、形象和糖分空间</span>
+        <span><b></b>底部 Tab 可切换核心模块</span>
+        <span><b></b>拍摄、衣物卡片、糖分帖子均可点击</span>
+      </div>
+    </section>
+
+    <main class="phone-shell" aria-label="MoCam 手机模拟器">
+      <div class="phone-frame">
+        <div class="phone-notch"></div>
+        <div class="app-screen">
+          <header class="status-bar" aria-hidden="true">
+            <span>9:41</span>
+            <div><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></div>
+          </header>
+
+          <section class="screen active" id="screen-onboarding" aria-label="糖分注册">
+            <div class="screen-scroll onboarding-scroll">
+              <div class="top-brand">
+                <div class="brand-mark">M</div>
+                <div>
+                  <strong>MoCam</strong>
+                  <span>another me</span>
+                </div>
+              </div>
+
+              <section class="welcome-card">
+                <span class="eyebrow">开始之前</span>
+                <h2>选择你愿意被 MoCam 认识到什么程度。</h2>
+                <p>所有人都可以使用 MoCam；默认尊重隐私边界，后续内容会按你的糖分生成。</p>
+              </section>
+
+              <div class="sugar-stack" id="sugarStack">
+                <button class="sugar-option" data-sugar="zero" type="button">
+                  <div class="sugar-art zero-art">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="sugar-text">
+                    <span>0糖</span>
+                    <strong>不拍脸，不录身体</strong>
+                    <p>提供衣物、配饰、化妆品和偏好。内容以匿名文字、清单和物品分享为主。</p>
+                  </div>
+                  <i data-lucide="chevron-right"></i>
+                </button>
+
+                <button class="sugar-option selected" data-sugar="half" type="button">
+                  <div class="sugar-art half-art">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="sugar-text">
+                    <span>半糖</span>
+                    <strong>部分特征，卡通呈现</strong>
+                    <p>可录入肤色、身形轮廓、风格关键词。后续用 avatar 试穿和互动。</p>
+                  </div>
+                  <i data-lucide="chevron-right"></i>
+                </button>
+
+                <button class="sugar-option" data-sugar="full" type="button">
+                  <div class="sugar-art full-art">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="sugar-text">
+                    <span>全糖</span>
+                    <strong>完整记录，真实预览</strong>
+                    <p>可上传脸、身形、全身照和妆容。支持真人试穿、妆容和写真感社区。</p>
+                  </div>
+                  <i data-lucide="chevron-right"></i>
+                </button>
+              </div>
+
+              <section class="privacy-card">
+                <i data-lucide="shield-check"></i>
+                <p>你可以随时降低糖分、删除数据，社区展示和 AI 私密分析分开管理。</p>
+              </section>
+
+              <button class="primary-btn sticky-cta" id="startApp" type="button">
+                <span>进入 MoCam</span><i data-lucide="arrow-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <section class="screen" id="screen-home" aria-label="今日推荐">
+            <div class="screen-scroll">
+              <div class="app-top">
+                <div>
+                  <span class="soft-label">今日 MoCam</span>
+                  <h2 id="homeTitle">半糖松弛通勤</h2>
+                </div>
+                <button class="icon-btn" id="openPrivacy" type="button" aria-label="隐私设置">
+                  <i data-lucide="lock-keyhole"></i>
+                </button>
+              </div>
+
+              <section class="hero-look">
+                <div class="look-orbit">
+                  <div class="avatar-stage half" id="avatarStage">
+                    <img class="digital-human-img" src="assets/mocam-digital-woman.png" alt="MoCam 女生向数字人穿搭预览">
+                    <span id="avatarBadge">半糖 avatar</span>
+                  </div>
+                </div>
+                <div class="look-copy">
+                  <span>上海 · 24°C · 微风</span>
+                  <p id="homeCopy">雾粉短外套压住深墨蓝衬衫的利落感，搭鼠尾草半裙，柔和但不甜腻。</p>
+                </div>
+              </section>
+
+              <div class="quick-row">
+                <button class="quick-chip active" data-mood="通勤" type="button">通勤</button>
+                <button class="quick-chip" data-mood="约会" type="button">约会</button>
+                <button class="quick-chip" data-mood="松弛" type="button">松弛</button>
+                <button class="quick-chip" data-mood="不好惹" type="button">不好惹</button>
+              </div>
+
+              <section class="insight-card">
+                <div class="insight-head">
+                  <i data-lucide="sparkles"></i>
+                  <strong>MoCam 解释</strong>
+                </div>
+                <p id="insightText">你的衣橱里柔和色偏多，今天用墨蓝做一点结构感，会比单纯甜美更像“你”。</p>
+              </section>
+
+              <section class="ai-chat-card" aria-label="AI造型师对话">
+                <div class="chat-head">
+                  <div>
+                    <span class="soft-label">AI Stylist</span>
+                    <h3>和 MoCam 讨论今天怎么穿</h3>
+                  </div>
+                  <span class="live-dot">在线</span>
+                </div>
+                <div class="chat-thread" id="chatThread">
+                  <div class="chat-bubble ai">我看了你的衣橱、天气和最近 7 天穿搭，今天推荐“粉 + 墨蓝 + 鼠尾草”。想更甜、更显贵，还是更日常？</div>
+                  <div class="chat-bubble user">我想显得温柔，但不要太学生气。</div>
+                  <div class="chat-bubble ai" id="aiReply">那就保留雾粉外套，用深墨蓝衬衫压一下甜度。妆容选豆沙唇，耳饰只戴小金扣。</div>
+                </div>
+                <div class="chat-actions">
+                  <button data-chat="date" type="button">换成约会</button>
+                  <button data-chat="office" type="button">更通勤</button>
+                  <button data-chat="rain" type="button">下雨备选</button>
+                  <button class="miromind-action" id="runMiroMind" type="button">运行 MiroMind</button>
+                </div>
+                <p class="ai-live-status" id="miromindStatus">参赛版可通过服务端代理调用 MiroMind API，key 不会暴露在浏览器。</p>
+              </section>
+
+              <section class="smart-board" aria-label="智能推荐入口">
+                <button class="smart-card palette-card" data-sheet="color" type="button">
+                  <span class="soft-label">色系搭配</span>
+                  <strong>3 套可选色盘</strong>
+                  <div class="palette-strip"><i></i><i></i><i></i><i></i></div>
+                  <p>按衣橱已有单品生成，不是空想搭配。</p>
+                </button>
+                <button class="smart-card" data-sheet="makeup" type="button">
+                  <span class="soft-label">妆容推荐</span>
+                  <strong>低饱和豆沙妆</strong>
+                  <p>同步口红、腮红、耳饰和衣服冷暖。</p>
+                </button>
+                <button class="smart-card" data-tab="wardrobe" type="button">
+                  <span class="soft-label">可用单品</span>
+                  <strong>从 36 件里选 7 件</strong>
+                  <p>点开直接看衣橱里的候选单品。</p>
+                </button>
+              </section>
+
+              <div class="tile-grid">
+                <button class="mini-tile" data-sheet="color" type="button">
+                  <i data-lucide="palette"></i>
+                  <strong>颜色</strong>
+                  <span>粉 · 绿 · 墨蓝</span>
+                </button>
+                <button class="mini-tile" data-sheet="makeup" type="button">
+                  <i data-lucide="brush"></i>
+                  <strong>妆容</strong>
+                  <span>低饱和豆沙</span>
+                </button>
+                <button class="mini-tile" data-sheet="shop" type="button">
+                  <i data-lucide="shopping-bag"></i>
+                  <strong>愿望单</strong>
+                  <span>补齐深色下装</span>
+                </button>
+                <button class="mini-tile" data-tab="wardrobe" type="button">
+                  <i data-lucide="shirt"></i>
+                  <strong>衣橱</strong>
+                  <span>36 件可搭</span>
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <section class="screen" id="screen-wardrobe" aria-label="AI衣橱">
+            <div class="screen-scroll">
+              <div class="app-top">
+                <div>
+                  <span class="soft-label">AI 衣橱</span>
+                  <h2>把衣服变成可计算的灵感。</h2>
+                </div>
+                <button class="icon-btn" id="openCapture" type="button" aria-label="拍照收录">
+                  <i data-lucide="camera"></i>
+                </button>
+              </div>
+
+              <section class="capture-preview" id="captureCard">
+                <div class="scan-box">
+                  <img src="assets/mocam-wardrobe-capture.png" alt="MoCam AI衣橱拍摄收录示例">
+                  <div class="scan-beam"></div>
+                </div>
+                <div>
+                  <span class="soft-label">刚刚识别</span>
+                  <h3>雾粉短外套</h3>
+                  <p>春秋 · 轻正式 · 柔和色 · 通勤/约会</p>
+                </div>
+              </section>
+
+              <div class="filter-row">
+                <button class="filter-pill active" data-filter="全部" type="button">全部</button>
+                <button class="filter-pill" data-filter="上装" type="button">上装</button>
+                <button class="filter-pill" data-filter="下装" type="button">下装</button>
+                <button class="filter-pill" data-filter="配饰" type="button">配饰</button>
+                <button class="filter-pill" data-filter="化妆包" type="button">化妆包</button>
+              </div>
+
+              <div class="closet-list" id="closetList"></div>
+            </div>
+          </section>
+
+          <section class="screen" id="screen-community" aria-label="糖分社区">
+            <div class="screen-scroll">
+              <div class="app-top community-top">
+                <div>
+                  <span class="soft-label">糖分社区</span>
+                  <h2>不同糖分，各自自在。</h2>
+                </div>
+                <button class="icon-btn" id="openPost" type="button" aria-label="发布">
+                  <i data-lucide="plus"></i>
+                </button>
+              </div>
+
+              <div class="community-switch" role="tablist" aria-label="糖分切换">
+                <button class="active" data-community="zero" role="tab" type="button">0糖</button>
+                <button data-community="half" role="tab" type="button">半糖</button>
+                <button data-community="full" role="tab" type="button">全糖</button>
+              </div>
+
+              <section class="visitor-day">
+                <i data-lucide="door-open"></i>
+                <div>
+                  <strong>周三串门日</strong>
+                  <p>用临时身份去其他糖分看看，不改变你的默认隐私设置。</p>
+                </div>
+              </section>
+
+              <div class="feed-list" id="feedList"></div>
+            </div>
+          </section>
+
+          <section class="screen" id="screen-profile" aria-label="我的">
+            <div class="screen-scroll">
+              <div class="profile-hero">
+                <div class="profile-avatar" id="profileAvatar">半</div>
+                <div>
+                  <span class="soft-label">another me</span>
+                  <h2 id="profileTitle">半糖用户</h2>
+                  <p id="profileCopy">卡通化呈现，保留推荐所需的身体轮廓和风格偏好。</p>
+                </div>
+              </div>
+
+              <section class="profile-card">
+                <div class="profile-row">
+                  <span>当前糖分</span>
+                  <strong id="profileSugar">半糖</strong>
+                </div>
+                <div class="profile-row">
+                  <span>已收录衣物</span>
+                  <strong>36</strong>
+                </div>
+                <div class="profile-row">
+                  <span>本周新增搭配方案</span>
+                  <strong>28</strong>
+                </div>
+              </section>
+
+              <section class="pro-card">
+                <div>
+                  <span class="soft-label">MoCam Pro</span>
+                  <h3>解锁你的私人 AI 形象工作室</h3>
+                  <p>AI 换衣间、无限搭配建议、深度报告和场景胶囊衣橱都在这里。</p>
+                </div>
+                <button data-sheet="pro" type="button">查看权益</button>
+              </section>
+
+              <div class="report-grid">
+                <button class="report-card accent" data-sheet="fittingRoom" type="button">
+                  <i data-lucide="scan-face"></i>
+                  <strong>AI 换衣间</strong>
+                  <span>12 套真人/化身预览</span>
+                </button>
+                <button class="report-card accent" data-sheet="outfitPack" type="button">
+                  <i data-lucide="sparkles"></i>
+                  <strong>搭配灵感包</strong>
+                  <span>通勤、约会、旅行</span>
+                </button>
+                <button class="report-card" data-sheet="wardrobeReport" type="button">
+                  <i data-lucide="pie-chart"></i>
+                  <strong>衣橱报告</strong>
+                  <span>利用率 64%</span>
+                </button>
+                <button class="report-card" data-sheet="makeupReport" type="button">
+                  <i data-lucide="sparkle"></i>
+                  <strong>妆容匹配</strong>
+                  <span>豆沙系最佳</span>
+                </button>
+                <button class="report-card" data-sheet="spendReport" type="button">
+                  <i data-lucide="calendar-heart"></i>
+                  <strong>场景胶囊</strong>
+                  <span>7 天不重样</span>
+                </button>
+                <button class="report-card" data-sheet="communityReport" type="button">
+                  <i data-lucide="heart"></i>
+                  <strong>糖分画像</strong>
+                  <span>半糖互动高</span>
+                </button>
+              </div>
+
+              <button class="setting-row" data-sheet="privacy" type="button">
+                <i data-lucide="shield"></i>
+                <span>隐私仪表盘</span>
+                <i data-lucide="chevron-right"></i>
+              </button>
+              <button class="setting-row" data-sheet="travel" type="button">
+                <i data-lucide="luggage"></i>
+                <span>旅行行李箱生成</span>
+                <i data-lucide="chevron-right"></i>
+              </button>
+              <button class="setting-row" data-sheet="fittingRoom" type="button">
+                <i data-lucide="shirt"></i>
+                <span>AI 换衣间历史</span>
+                <i data-lucide="chevron-right"></i>
+              </button>
+              <button class="setting-row" data-sheet="style" type="button">
+                <i data-lucide="history"></i>
+                <span>风格进化档案</span>
+                <i data-lucide="chevron-right"></i>
+              </button>
+            </div>
+          </section>
+
+          <nav class="tab-bar" aria-label="底部导航">
+            <button class="tab active" data-tab="home" type="button">
+              <i data-lucide="sparkles"></i><span>今日</span>
+            </button>
+            <button class="tab" data-tab="wardrobe" type="button">
+              <i data-lucide="shirt"></i><span>衣橱</span>
+            </button>
+            <button class="tab capture-tab" id="bottomCapture" type="button">
+              <i data-lucide="camera"></i><span>拍摄</span>
+            </button>
+            <button class="tab" data-tab="community" type="button">
+              <i data-lucide="messages-square"></i><span>糖分</span>
+            </button>
+            <button class="tab" data-tab="profile" type="button">
+              <i data-lucide="user-round"></i><span>我的</span>
+            </button>
+          </nav>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="sheet-backdrop" id="sheetBackdrop" aria-hidden="true"></div>
+  <aside class="bottom-sheet" id="bottomSheet" aria-live="polite" aria-label="详情面板">
+    <div class="sheet-handle"></div>
+    <div id="sheetContent"></div>
+  </aside>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
