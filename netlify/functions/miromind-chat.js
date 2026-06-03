@@ -30,17 +30,17 @@ exports.handler = async function handler(event) {
 
   const prompt = [
     "You are MiroMind acting as the reasoning backend for MoCam, a privacy-first AI wardrobe app.",
-    "Return a concise Chinese result for a mobile demo. Do not expose hidden reasoning.",
+    "Return a concise English result for a mobile demo. Do not expose hidden reasoning.",
     "Respect the user's privacy mode. Do not ask for face/body data unless the mode explicitly allows it.",
     `Privacy sugar mode: ${sugar}`,
     "",
     task,
     "",
-    "Output exactly four short bullet points in Chinese:",
-    "- 今日穿搭：",
-    "- 色系逻辑：",
-    "- 妆容配饰：",
-    "- 糖分呈现："
+    "Output exactly four short bullet points in English:",
+    "- Outfit:",
+    "- Color logic:",
+    "- Makeup/accessory:",
+    "- Sugar display:"
   ].join("\n");
 
   try {

@@ -202,14 +202,12 @@ button {
 }
 
 .brand-mark {
-  display: grid;
+  display: block;
   width: 42px;
   height: 42px;
-  place-items: center;
   border-radius: 12px;
-  color: #fff;
-  background: var(--ink);
-  font-weight: 900;
+  object-fit: cover;
+  box-shadow: 0 8px 18px rgba(36, 48, 47, 0.12);
 }
 
 .top-brand strong,

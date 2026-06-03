@@ -1,10 +1,10 @@
-# MoCam / 摩卡相机
+# MoCam
 
 MoCam is a mobile-app demo for a privacy-first AI wardrobe and another-me community.
 
 ## What This Demo Shows
 
-- Sugar privacy modes: `0糖`, `半糖`, `全糖`
+- Sugar privacy modes: `0 Sugar`, `Half Sugar`, `Full Sugar`
 - AI wardrobe capture and item thumbnails
 - Daily outfit, color, makeup, and scene recommendations
 - Sugar-based community concept
